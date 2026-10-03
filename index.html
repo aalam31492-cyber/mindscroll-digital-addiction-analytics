@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MindScroll – Digital Addiction Analytics Platform</title>
+<style>
+:root{--bg:#f7f8fc;--card:#fff;--ink:#16192c;--mut:#5d6380;--acc:#5b5bf0;--acc2:#12b5a5;--bd:#e3e6f2;--warn:#f59e0b;--bad:#ef4444;--good:#10b981;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1120;--card:#181b30;--ink:#eef0ff;--mut:#9aa0c3;--bd:#2a2e4a}}
+:root[data-theme="dark"]{--bg:#0f1120;--card:#181b30;--ink:#eef0ff;--mut:#9aa0c3;--bd:#2a2e4a}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.w{max-width:1040px;margin:auto;padding:0 20px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);border-bottom:1px solid var(--bd);z-index:5}
+nav .w{display:flex;justify-content:space-between;align-items:center;height:56px}
+nav b{font-size:18px}nav a{color:var(--mut);text-decoration:none;margin-left:18px;font-size:14px}
+nav div{overflow-x:auto;white-space:nowrap}
+header{padding:70px 0 50px;text-align:center}
+.tag{display:inline-block;background:var(--card);border:1px solid var(--bd);border-radius:99px;padding:4px 14px;font-size:13px;color:var(--mut)}
+h1{font-size:clamp(32px,6vw,54px);line-height:1.1;margin:18px 0}
+h1 span{background:linear-gradient(90deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
+header p{max-width:620px;margin:0 auto 26px;color:var(--mut);font-size:18px}
+.btn{display:inline-block;background:var(--acc);color:#fff;padding:12px 24px;border-radius:10px;text-decoration:none;font-weight:600;margin:4px}
+.btn.o{background:transparent;color:var(--ink);border:1px solid var(--bd)}
+section{padding:50px 0}
+h2{font-size:30px;margin:0 0 6px}.sub{color:var(--mut);margin:0 0 28px}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.c{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:20px}
+.c h3{margin:0 0 6px;font-size:17px}.c p{margin:0;color:var(--mut);font-size:14px}
+.ic{font-size:26px;margin-bottom:8px}
+.kpi{font-size:30px;font-weight:700}
+.bars{display:flex;align-items:flex-end;gap:10px;height:150px;margin-top:14px}
+.bars div{flex:1;text-align:center;font-size:12px;color:var(--mut);display:flex;flex-direction:column;justify-content:flex-end;height:100%}
+.bars i{display:block;background:linear-gradient(var(--acc),var(--acc2));border-radius:6px 6px 0 0;margin-bottom:4px}
+.dash{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.demo{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+label{display:flex;justify-content:space-between;font-size:14px;margin-top:14px}
+input[type=range]{width:100%;accent-color:var(--acc)}
+.score{font-size:64px;font-weight:800;line-height:1}
+.meter{height:12px;border-radius:99px;background:var(--bd);overflow:hidden;margin:12px 0}
+.meter i{display:block;height:100%;width:0;transition:.4s}
+#recs{padding-left:18px;color:var(--mut);font-size:14px}
+.tl{border-left:2px solid var(--bd);margin-left:10px}
+.tl div{position:relative;padding:0 0 22px 24px}
+.tl div:before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--acc)}
+.tl b{display:block}.tl span{color:var(--mut);font-size:14px}
+.chips span{display:inline-block;background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:6px 14px;margin:4px;font-size:14px}
+pre{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:16px;overflow-x:auto;font-size:13px;margin:0}
+footer{text-align:center;color:var(--mut);padding:36px 0;font-size:14px;border-top:1px solid var(--bd)}
+</style>
+</head>
+<body>
+<nav><div class="w"><b>🧠 MindScroll</b><div><a href="#features">Features</a><a href="#dash">Dashboard</a><a href="#demo">Risk Demo</a><a href="#stack">Stack</a><a href="#plan">8-Week Plan</a></div></div></nav>
+
+<header><div class="w">
+<span class="tag">Data Analytics · ML · Digital Wellness</span>
+<h1>Understand your screen habits. <span>Spot addiction early.</span></h1>
+<p>A data analytics platform that analyzes social media usage, screen time, sleep disruption and productivity to score digital addiction risk and coach healthier habits.</p>
+<a class="btn" href="#demo">Try Risk Score</a><a class="btn o" href="#plan">View Roadmap</a>
+</div></header>
+
+<section id="features"><div class="w">
+<h2>Core Features</h2><p class="sub">Everything needed to track, understand and improve digital behavior.</p>
+<div class="g">
+<div class="c"><div class="ic">📊</div><h3>Screen Time Dashboard</h3><p>Daily and weekly usage, app frequency and scrolling duration at a glance.</p></div>
+<div class="c"><div class="ic">📝</div><h3>Usage Reports</h3><p>Auto-generated daily and weekly summaries with trend comparison.</p></div>
+<div class="c"><div class="ic">⚖️</div><h3>Productivity vs Social</h3><p>Correlate social media hours with focus, output and task completion.</p></div>
+<div class="c"><div class="ic">🚨</div><h3>Addiction Risk Score</h3><p>0–100 score from a Scikit-learn model on behavior indicators.</p></div>
+<div class="c"><div class="ic">🤖</div><h3>AI Recommendations</h3><p>Personalized tips, limits and reminders for healthier habits.</p></div>
+<div class="c"><div class="ic">😊</div><h3>Mood Surveys</h3><p>Quick mood and productivity check-ins merged into analytics.</p></div>
+</div></div></section>
+
+<section id="dash"><div class="w">
+<h2>Dashboard Preview</h2><p class="sub">Sample data. Final version built in Power BI / Tableau and a web frontend.</p>
+<div class="dash">
+<div class="c"><p>Avg daily screen time</p><div class="kpi">6h 42m</div><p style="color:var(--bad)">▲ 18% vs last week</p></div>
+<div class="c"><p>Late-night usage (after 12am)</p><div class="kpi">3.1 days</div><p style="color:var(--warn)">per week</p></div>
+<div class="c"><p>Productivity score</p><div class="kpi">58 / 100</div><p style="color:var(--good)">▲ 4 pts</p></div>
+<div class="c" style="grid-column:1/-1"><h3>Weekly screen time (hours)</h3>
+<div class="bars" id="bars"></div></div>
+<div class="c"><h3>App share</h3><div id="apps"></div></div>
+<div class="c"><h3>Social hours vs productivity</h3><p>Pearson r = <b>−0.71</b>. More social time strongly linked to lower productivity in sample data.</p></div>
+</div></div></section>
+
+<section id="demo"><div class="w">
+<h2>Addiction Risk Demo</h2><p class="sub">Rule-based preview of the scoring idea. Real model trained in Week 5. Not a medical diagnosis.</p>
+<div class="demo">
+<div class="c">
+<label>Daily screen time <b id="v1">6 h</b></label><input type="range" id="s1" min="1" max="14" value="6">
+<label>Scrolling per session <b id="v2">40 min</b></label><input type="range" id="s2" min="5" max="180" value="40">
+<label>Phone checks per day <b id="v3">80</b></label><input type="range" id="s3" min="10" max="250" value="80">
+<label>Night usage after 12am <b id="v4">1 h</b></label><input type="range" id="s4" min="0" max="5" step="0.5" value="1">
+<label>Productivity (self-rated) <b id="v5">6 / 10</b></label><input type="range" id="s5" min="1" max="10" value="6">
+</div>
+<div class="c">
+<p>Risk score</p><div class="score" id="sc">0</div>
+<div class="meter"><i id="mt"></i></div>
+<b id="lv"></b>
+<p style="margin:12px 0 4px"><b>Recommendations</b></p>
+<ul id="recs"></ul>
+</div></div></div></section>
+
+<section id="stack"><div class="w">
+<h2>Tech Stack</h2><p class="sub">Pipeline from raw data to insight.</p>
+<div class="chips"><span>🐍 Python</span><span>🐼 Pandas</span><span>🗄️ SQL (PostgreSQL)</span><span>🤖 Scikit-learn</span><span>📈 Power BI</span><span>📊 Tableau</span><span>⚡ Flask / FastAPI</span><span>☁️ Cloud Deploy</span><span>🐙 GitHub</span></div>
+<pre style="margin-top:18px">Data sources → Cleaning (Pandas) → SQL DB → REST API
+                                        ↓
+        Dashboards (Power BI / Tableau) ← ML risk model → Recommendation engine → Reminders</pre>
+</div></section>
+
+<section id="plan"><div class="w">
+<h2>8-Week Roadmap</h2><p class="sub">Internship plan, week by week.</p>
+<div class="tl">
+<div><b>Week 1 · Research & Problem Understanding</b><span>Study digital addiction, analyze existing platforms, define key metrics, finalize scope and stack.</span></div>
+<div><b>Week 2 · Data Collection & Preparation</b><span>Gather datasets, clean with Pandas, structure into database, run EDA.</span></div>
+<div><b>Week 3 · Database & Backend Setup</b><span>Schema design, backend environment, APIs, storage/retrieval, activity tracking modules.</span></div>
+<div><b>Week 4 · Dashboard & Visualization</b><span>Interactive dashboards, usage charts, addiction indicators, frontend–API integration.</span></div>
+<div><b>Week 5 · AI/ML Model Development</b><span>Prepare features, build risk prediction model, train/test, evaluate and optimize.</span></div>
+<div><b>Week 6 · Recommendation System</b><span>Personalized suggestions engine, reminder/notification system, improved interaction.</span></div>
+<div><b>Week 7 · Testing & Optimization</b><span>System tests, bug fixes, performance tuning, edge cases and missing data handling.</span></div>
+<div><b>Week 8 · Deployment & Final Presentation</b><span>Cloud deploy, documentation, demo video, final presentation, GitHub submission.</span></div>
+</div></div></section>
+
+<footer>MindScroll · Digital Wellness Analytics · Internship Project</footer>
+
+<script>
+const $=id=>document.getElementById(id);
+const d=[["Mon",5.2],["Tue",6.1],["Wed",5.8],["Thu",7.0],["Fri",7.9],["Sat",9.1],["Sun",8.4]];
+$("bars").innerHTML=d.map(([n,h])=>`<div><i style="height:${h*9.5}%"></i>${h}h<br>${n}</div>`).join("");
+$("apps").innerHTML=[["Instagram",34],["YouTube",26],["WhatsApp",18],["X / Twitter",12],["Other",10]].map(([n,p])=>`<div style="font-size:13px;margin-top:8px">${n} · ${p}%<div class="meter" style="height:8px;margin:3px 0"><i style="width:${p*2.5}%;background:var(--acc)"></i></div></div>`).join("");
+function calc(){
+ const a=+$("s1").value,b=+$("s2").value,c=+$("s3").value,n=+$("s4").value,p=+$("s5").value;
+ $("v1").textContent=a+" h";$("v2").textContent=b+" min";$("v3").textContent=c;$("v4").textContent=n+" h";$("v5").textContent=p+" / 10";
+ const s=Math.round(Math.min(100,a/14*30+b/180*20+c/250*20+n/5*15+(10-p)/9*15));
+ $("sc").textContent=s;
+ const m=$("mt");m.style.width=s+"%";
+ const [lv,col]=s<35?["Low risk · healthy usage","var(--good)"]:s<60?["Moderate risk · watch trends","var(--warn)"]:["High risk · action recommended","var(--bad)"];
+ $("lv").textContent=lv;$("lv").style.color=col;m.style.background=col;
+ const r=[];
+ if(a>=6)r.push("Set a daily app limit of "+Math.max(2,a-2)+" hours.");
+ if(b>=60)r.push("Take a 5 min break every 30 min of scrolling.");
+ if(c>=100)r.push("Turn off non-essential notifications.");
+ if(n>=1)r.push("Enable wind-down mode 1 hour before bed.");
+ if(p<=5)r.push("Schedule 2 phone-free focus blocks daily.");
+ if(!r.length)r.push("Great balance. Keep tracking weekly.");
+ $("recs").innerHTML=r.map(x=>"<li>"+x+"</li>").join("");
+}
+document.querySelectorAll("input[type=range]").forEach(e=>e.oninput=calc);calc();
+</script>
+</body>
+</html>
